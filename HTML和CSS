@@ -1,0 +1,453 @@
+Say Hello to HTML Element
+HTML是英文hyper text markup language(超文档标记语言)的缩写.
+
+大多数元素都是一个表示标记,一个结束标记,中间内容.例如:
+
+<h1>hello HTML</h1>
+
+Headline with the h2 Element
+h1到h6标签表示各种层级的标题,其中h1为主标题.
+
+Inform with the Paragraph Element
+p是英文paragraph的缩写,意思是段落.
+
+<h1>Hello World</h1>
+
+<h2>我家的猫咪</h2>
+
+<p>Hello Paragraph</p>
+
+Uncomment HTML
+用<!-- -->来注释代码
+
+Comment out HTML
+注释的开始标记是<!-- ,结束标记是-->
+
+Fill in the Blank with Placeholder Text
+Web开发者通常用lorem ipsum text来做占位符，占位符就是占着位置的一些文字，没有实际意义。
+
+Delete HTML Elements
+只需要从开始标记删除到结束标记.
+
+Change the Color of Text
+通过修改样式的color属性来改变颜色
+<h2 style="color: red"></h2>
+
+Use CSS Selectors to Style Elements
+这种模式<h2 style="color: red"></h2>是内联样式(inline style),但是应该使用更容易维护的层叠样式表CSS(Cascading Style Sheets).例如:
+<style>
+h2{
+  color: red;
+}
+</style>
+
+Use a CSS Class to Style an Element
+我们先声明一个类选择器：
+
+<style>
+  .blue-text {
+    color: blue;
+  }
+</style>
+然后在h2元素上应用我们声明的类选择器：
+
+<h2 class="blue-text">CatPhotoApp</h2>
+
+Style Multiple Elements with a CSS Class
+同一个class可以应用到多个标签上.
+
+Change the Font Size of an Element
+字号是由样式属性font-size来控制的, 如下：
+
+h1 {
+  font-size: 30px;
+}
+
+Set the Font Family of an Element
+用font-family属性来设置元素的字体。
+
+如果你想把副标题的字体设置为Sans-serif，你可以使用下面的CSS：
+
+h2 {
+  font-family: sans-serif;
+}
+
+Import a Google Font
+使用<link>标签来引入谷歌Lobster字体
+<link href="https://fonts.gdgdocs.org/css?family=Lobster" rel="stylesheet" type="text/css">
+
+Specify How Fonts Should Degrade
+有几种默认的字体是所有浏览器都可用的，包括Monospace、Serif和Sans-Serif。
+
+当某种字体不可用时，你可以让浏览器自动降级到另一种字体。
+
+例如，如果你想让段落的字体为Helvetica，但你同时想在Helvetica字体不可用时自动降级使用Sans-Serif字体，你可以使用如下CSS样式：
+
+p {
+  font-family: Helvetica, Sans-Serif;
+}
+
+Add Images to your Website
+使用img元素来为你的网站添加图片，使用src属性指向一个图片的具体地址。举例如下：
+
+<img src="https://www.your-image-source.com/your-image.jpg">
+
+注意：img元素是自关闭元素，不需要结束标记。
+
+Size your Images
+CSS包含一个控制元素宽度的width属性。像控制字体一样，我们使用px（像素）来指定图片的宽度。
+
+例如，如果我们想要创建一个名为larger-image的类选择器，把HTML元素的宽度设定为500像素，我们使用：
+
+<style>
+  .larger-image {
+    width: 500px;
+  }
+</style>
+
+Add Borders Around your Elements
+CSS 边框的属性有style(样式)、color(颜色)、width(宽度)、height(高度)等。
+
+举个例子，如果我们想要让一个HTML元素的边框颜色为红色、边框宽度为5像素(px)、边框样式为固体(solid)，代码如下:
+<style>
+  .thin-red-border {
+    border-color: red;
+    border-width: 5px;
+    border-style: solid;
+  }
+</style>
+
+Add Rounded Corners with a Border Radius
+猫咪图片的边框现在是尖尖的，不够可爱，我们可以通过CSS的一个叫border-radius(边框半径)的属性来让它的边框变成圆的。
+
+你同样可以使用像素来指定border-radius的属性值，现在让你的猫咪图片的边框半径为10px吧。
+
+Make Circular Images with a Border Radius
+除了像素，你还可以使用百分比来指定border-radius边框半径的值。
+
+Link to External Pages with Anchor Elements
+a元素，也叫anchor（锚点）元素，既可以用来链接到外部地址实现页面跳转功能，也可以链接到当前页面的某部分实现内部导航功能。
+<p>Here's a <a href="http://freecodecamp.cn"> link to FreeCodeCamp中文社区 </a> for you to follow.</p>
+
+Nest an Anchor Element within a Paragraph
+<p>Here's a <a href="https://freecodecamp.cn"> link to FreeCodeCamp中文社区</a> for you to follow.</p>
+Nesting（嵌套）就是把一个元素放在另一个元素里面。
+
+Make Dead Links using the Hash Symbol
+有时你想为你的网站添加一个a元素，但此时你还不知道要将它们链接到哪儿，此时可以使用固定链接。
+
+把你的a元素的href属性的值替换为一个#，别名hash(哈希)符号，将其变为一个固定链接。
+
+Turn an Image into a Link
+你可以通过把某元素嵌套进a元素使其变成一个链接。
+
+把你的图片嵌套进a元素。举例如下：
+
+<a href="#"><img src="/images/relaxing-cat.jpg"></a>
+
+Add Alt Text to an Image for Accessibility
+alt属性，也被称为alt text, 是当图片无法加载时显示的替代文本。简而言之，每一张图片都应该有一个alt属性！
+
+Create a Bulleted Unordered List
+HTML有一个特殊元素，用于创建unordered lists（无序列表）, 或带项目符号的列表。
+
+无序列表以<ul>元素开始，并包含一个或多个<li>元素。
+
+例如：
+
+<ul>
+  <li>milk</li>
+  <li>cheese</li>
+</ul>
+
+Create an Ordered List
+HTML有一个特殊元素，用于创建ordered lists（有序列表）, 或数字编号列表。
+
+有序列表以<ol>元素开始，并包含一个或多个<li>元素。
+
+例如：
+
+<ol>
+  <li>Garfield</li>
+  <li>Sylvester</li>
+</ol>
+
+Create a Text Field
+现在让我们来创建一个form(表单)。
+
+Text input(文本输入框)是用来获得用户输入的绝佳方式。
+
+你可以用如下方法创建：
+
+<input type="text">
+
+注意，input元素是自关闭的。
+Add Placeholder Text to a Text Field
+占位符(placeholder text)是用户在input(输入)框输入任何东西之前放置在input(输入)框中的预定义文本。
+
+你可以用如下方式创建占位符：
+<input type="text" placeholder="this is placeholder">
+
+Create a Form Element
+使用HTML来构建可以跟服务器交互的Web表单(form)，通过给你的form元素添加一个action属性来达到此目的。
+action属性的值指定了表单提交到服务器的地址。
+
+例如：
+
+<form action="/url-where-you-want-to-submit-form-data"></form>
+
+Add a Submit Button to a Form
+让我们来为你的form添加一个submit(提交)按钮，点击这个按钮，表单中的数据将会被发送到你通过action属性指定的地址上。
+
+下面是submit按钮的例子：
+
+<button type="submit">this button submits the form</button>
+
+Use HTML5 to Require a Field
+Use HTML5 to Require a Field
+当你设计表单时，你可以指定某些选项为必填项(required)，只有当用户填写了该选项后，用户才能够提交表单。
+
+例如，如果你想把一个文本输入字段设置为必填项，在你的input元素中加上required属性就可以了，你可以使用：
+<input type="text" required>
+
+Create a Set of Radio Buttons
+多选一的场景就用radio button(单选按钮)
+单选按钮只是input输入框的一种类型。
+
+每一个单选按钮都应该嵌套在它自己的label(标签)元素中。
+
+注意：所有关联的单选按钮应该使用相同的name属性。
+下面是一个单选按钮的例子：
+<label><input type="radio" name="indoor-outdoor">indoor</label>
+
+
+Create a Set of Checkboxes
+复选按钮是input的输入框的另一种类型。
+
+每一个复选按钮都应该嵌套进label元素中。
+
+所有关联的复选按钮应该具有相同的name属性。
+下面是复选按钮的例子：
+<label><input type="checkbox" name="personality">Loving</label>
+
+Check Radio Buttons and Checkboxes by Default
+使用checked属性，你可以设置复选按钮和单选按钮默认被选中。
+
+为此，只需在input元素中添加属性checked
+<input type="radio" name="test-name" checked>
+
+
+Nest Many Elements within a Single Div Element
+div元素，也被称作division(层)元素，是一个盛装其他元素的通用容器。
+所以可以利用CSS的继承关系把div上的CSS传递给它所有子元素。
+
+你可以用<div>来标记一个div元素的开始，然后用</div>来标记一个div元素的结束。
+
+Give a Background Color to a Div Element
+你可以用 background-color 属性来设置一个元素的背景颜色。
+
+例如，如果你想把一个元素的背景颜色设置为green，你应该把这些加到你的 style 元素中：
+
+.green-background {
+  background-color: green;
+}
+
+Set the ID of an Element
+除了 class属性之外，每一个 HTML 元素还可以使用 id 属性。
+id 属性应该是唯一的，虽然浏览器并不强制唯一，但基于最佳实践，这一点是被广泛认可的，所以请不要给一个以上的元素设置相同的 id 属性。
+
+Use an ID Attribute to Style an Element
+和类选择器一样，你也可以使用ID选择器来声明样式。
+
+声明一个叫cat-photo-element的ID选择器 ，并设置背景色为绿色。：
+
+#cat-photo-element {
+  background-color: green;
+}
+注意：在你的 style 元素内部，定义类选择器必须添加 . 为前缀，定义ID选择器必须添加 # 为前缀。
+
+Adjusting the Padding of an Element
+你可能早已经注意到了这点，所有的 HTML 元素本质上是小的矩形块，代表着某一小块区域。
+
+有三个影响HTML元素布局的重要属性：padding(内边距)、margin(外边距)、border(边框)。
+
+元素的 padding 控制元素内容 content和元素边框 border 之间的距离。
+
+Adjust the Margin of an Element
+元素的外边距 margin 控制元素边框 border 和元素实际所占空间的距离。
+如果你将一个元素的 margin 设置为负值，元素将会变大。
+
+Add Different Padding to Each Side of an Element
+有时你想要自定义元素，使它的每一个边具有不同的 padding。
+
+CSS 允许你使用 padding-top、padding-right、padding-bottom 和 padding-left来控制元素上右下左四个方向的 padding。
+
+Add Different Margins to Each Side of an Element
+有时你想要自定义元素，使它的每一个边具有不同的 margin。
+
+CSS 允许你使用 margin-top、margin-right、margin-bottom 和 margin-left 来控制元素上右下左四个方向的 margin。
+
+Use Clockwise Notation to Specify the Padding of an Element
+除了分别指定元素的 padding-top、padding-right、padding-bottom 和 padding-left 属性外，你还可以集中起来指定它们，举例如下：
+
+padding: 10px 20px 10px 20px;
+
+这四个值以顺时针方式排列：顶部、右侧、底部、左侧，简称：上右下左。
+
+Use Clockwise Notation to Specify the Margin of an Element
+让我们再试一次，但这次是用于 margin。
+
+除了分别指定元素的 margin-top、margin-right、margin-bottom 和 margin-left 属性外，你还可以集中起来指定它们，举例如下：
+
+margin: 10px 20px 10px 20px;
+
+这四个值以顺时针方式排列：顶部、右侧、底部、左侧，简称：上右下左。
+
+
+Style the HTML Body Element
+现在让我们来一个全新的开始，讲一讲 CSS 继承。
+
+每一个 HTML 页面都有一个 body 元素。
+
+
+Inherit Styles from the Body Element
+现在我们证明了每一个 HTML 页面都有一个 body 元素，并且其 body 元素同样能够应用样式。
+
+记住，你可以像对其他 HTML 元素一样对你的 body 元素应用样式，并且所有其他元素将继承你的 body 元素的样式。
+
+
+Prioritize One Style Over Another
+有时你的 HTML 元素会得到相互冲突的多个样式。
+
+例如，你的 h1 元素不能同时为绿色和粉色。
+
+Override Styles in Subsequent CSS
+在 <style> 部分中 class 声明的顺序却非常重要，第二个声明总是比第一个具有优先权。因为 .blue-text 是第二个声明，它覆盖了 .pink-text 属性。
+
+
+Override Class Declarations by Styling ID Attributes
+我们刚刚证明了浏览器读取 CSS 的顺序是从上到下，这意味着，在发生冲突时，浏览器会使用最后的 CSS 声明。
+id比class具有更高优先级
+
+Override Class Declarations with Inline Styles
+<h1 style="color: green">
+内联样式比id,class优先级更高
+
+Override All Other Styles by using Important
+最强大的样式声明,!important.使用在属性值中.例如:color: pink !important;
+
+Use Hex Code for Specific Colors
+你是否知道在 CSS 中还有其他表示颜色的方法？其中的一种方法称作 hexadecimal code（十六进制编码），简写为 hex code。
+例如:
+<style>
+  body {
+    background-color: #000;
+  }
+</style>
+
+Use Hex Code to Color Elements White
+0 是 hex code（十六进制编码）中最小的一个，它代表颜色的完全缺失。
+
+F 是 hex code（十六进制编码）中最大的一个，它代表最大可能的亮度。
+
+Use Hex Code to Color Elements Red
+Hex code 遵循 red-green-blue（红-绿-蓝），或者叫 rgb 格式。hex code 中的前两位表示颜色中红色的数量，第三四位代表绿色的数量，第五六位代表蓝色的数量。
+
+所以要得到绝对的纯红色，你只需要在第一和第二位使用 F （最大可能的数值），且在第三、第四、第五和第六位使用 0 （最小可能数值）。
+<style>
+  body {
+    background-color: #FF0000;
+  }
+</style>
+
+
+Use Hex Code to Color Elements Green
+原理同上
+
+
+Use Hex Code to Color Elements Blue
+原理同上
+
+
+
+Use Hex Code to Mix Colors
+从这三种纯色（红、绿、蓝），我们能得到 1600 万种其它的颜色。
+
+例如，橙色是纯红，混合一些绿，没有蓝。
+
+通过对 background-color 应用 hex code 值 #FFA500 以把 body 元素的背景色设置为橙色。
+
+
+
+
+Use Hex Code to Color Elements Gray
+从这三种纯色（红、绿、蓝），我们能得到 1600 万种其它的颜色。
+
+我们也可以通过平均混合所有三种颜色得到不同灰度等级的灰色。
+
+通过对 background-color 应用 hex code 值 #808080 以把 body 元素的背景色设置为灰色。
+
+
+
+Use Hex Code for Specific Shades of Gray
+通过平均混合所有三种颜色，我们还可以得到其他色度等级的灰色，这样我们可以非常接近纯黑色。
+
+通过对 background-color 应用 hex code 值 #111111 以把 body 元素的背景色设置为深灰色。
+
+
+Use Abbreviated Hex Code
+许多人对超过 1600 万种颜色感觉十分地抓狂，并且 hex code 非常难以记忆。幸运的是，你可以缩短它。
+
+例如，红，hex code 是 #FF0000 ，可被缩写成 #F00。也就是说，一位表示红，一位表示绿，一位表示蓝。
+
+
+Use RGB values to Color Elements
+在 CSS 中表示颜色的另一个方法是使用 rgb 值。
+
+代表黑色的 RGB 值看起来是下面的样子：
+
+rgb(0, 0, 0)
+
+代表白色的 RGB 值看起来是下面的样子：
+
+rgb(255, 255, 255)
+
+使用 rgb，你通过 0 至 255 之间的一个数字来指定每种颜色的亮度，而不是像 hex code 那样使用六个十六进制数字。
+
+
+Use RGB to Color Elements White
+代表黑色的 RGB 值看起来是下面的样子：
+
+rgb(0, 0, 0)
+
+代表白色的 RGB 值看起来是下面的样子：
+
+rgb(255, 255, 255)
+
+使用 rgb，你通过 0 至 255 之间的一个数字来指定每种颜色的亮度，而不是像 hex code 那样使用六个十六进制数字。
+
+把 body 元素的背景色从黑色的 RGB 值修改为白色的 rgb 值 rgb(255, 255, 255)。
+
+
+Use RGB to Color Elements Red
+和使用 hex code 一样，你可以通过不同数值的组合来表示 RGB 中不同的颜色。
+
+这些数值遵循 RGB 顺序模式：第一位表示红色，第二位表示绿色，第三位表示蓝色。
+
+把 body 元素的背景色修改为红色的 RGB 值：rgb(255, 0, 0)。
+
+
+Use RGB to Color Elements Green
+现在将body 元素的背景色修改为绿色的 rgb 值：rgb(0, 255, 0)。
+
+
+Use RGB to Color Elements Blue
+将你的 body 元素的背景色修改为蓝色的 RGB 值：rgb(0, 0, 255)。
+
+
+Use RGB to Mix Colors
+就像使用 hex code 一样，你可以使用不同数值的组合在 RGB 中混合出各种颜色。
+
+将 body 元素的背景色修改为橙色的 RGB 值：rgb(255, 165, 0)。
+
+
