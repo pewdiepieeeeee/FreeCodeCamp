@@ -1,0 +1,329 @@
+Comment your JavaScript Code
+注释的代码块在JavaScript之中是不会运行的。注释是一个非常好的方式让你自己以及其他人明白这段代码是怎么运行的。
+
+JavaScript中的注释方式有以下两种：
+
+使用 // 来告诉JavaScript来忽略当前行的代码
+
+// This is an in-line comment.
+你也可以使用多行注释来注释你的代码，以/*开始，用*/来结束，就像下面这样：
+
+/* This is a 
+   multi-line comment */
+   
+   
+Declare JavaScript Variables
+在计算机科学中, data(数据)就是一切，因为它对于计算机的意义重大。JavaScript提供七种不同的data types(数据类型)，它
+们是undefined（未定义）, null（空）, boolean（布尔型）, string（字符串）, symbol(符号), number（数字）, and object（对象）。
+
+
+
+Storing Values with the Equal Operator
+在JavaScript中，你可以通过assignment(分配)操作符把一个值存储到变量中。
+
+myVariable = 5;
+
+把Number数字5赋给变量myVariable。
+
+赋值过程是从右到左进行的。所有 = 操作符右边的值都会被赋到左边的变量。
+
+
+Initializing Variables with the Equal Operator
+通常地我们会在initialize开始声明变量的时候就会给变量赋一个初始值。
+
+var myVar = 0;
+
+
+Understanding Uninitialized Variables
+当 JavaScript 中的变量被声明的时候，程序内部会给它一个初始值 undefined。当你对一个值为 undefined 的变量进行运算操作的时候，算出来的结果将会是 NaN，
+NaN 的意思是 "Not a Number"。当你用一个没有 定义 的变量来做字符串连接操作的时候，它会如实的输出"undefined"。
+
+
+Understanding Case Sensitivity in Variables
+在 JavaScript 中所有的变量都是大小写敏感的。这意味着你要区别对待大写字母和小写字母。
+
+
+Add Two Numbers with JavaScript
+现在让我们来尝试在JavaScript中做加法运算。
+
+JavaScript 中使用 + 号来让两个数字执行加法运算。
+
+举例
+
+myVar = 5 + 10; // 等于 15
+
+
+
+Subtract One Number from Another with JavaScript
+我们也可以在 JavaScript 中执行减法运算。
+
+JavaScript 中使用 - 来做减法运算。
+
+举例
+
+myVar = 12 - 6; // 等于 6
+
+
+Multiply Two Numbers with JavaScript
+我们也可在 JavaScript 中使用乘法运算。
+
+JavaScript 使用这个 * 符号来让两个数字相乘。
+
+举例
+
+myVar = 13 * 13; // 把 169 赋值给 myVar
+
+
+Divide One Number by Another with JavaScript
+我们可以在 JavaScript 中做除法运算。
+
+JavaScript 中使用 / 符号做除法运算。
+
+举例
+
+myVar = 16 / 2; // 把 8 赋值给 myVar
+
+
+
+Increment a Number with JavaScript
+使用 ++ ，我们可以很容易地对变量进行自增或者+1运算。
+
+i++;
+
+等效于
+
+i = i + 1;
+
+提示
+i++;这种写法，省去了书写=符号的必要。
+
+
+
+Decrement a Number with JavaScript
+使用自减符号 -- ，你可以很方便地对一个变量执行 自减 或者减一操作。
+
+i--;
+
+等效于
+
+i = i - 1;
+
+提示
+i--;这种写法，省去了书写等号的必要。
+
+
+
+Create Decimal Numbers with JavaScript
+我们也可以把小数存储到变量中。小数也被称作 浮点数 。
+
+
+Multiply Two Decimals with JavaScript
+在 JavaScript 中，你也可以用小数进行计算，就像整数一样。
+
+让我们把两个小数相乘，并得到它们相乘的结果（product）。
+
+
+
+Divide one Decimal by Another with JavaScript
+现在让我们来用一个小数做除法操作。
+
+
+
+Finding a Remainder in JavaScript
+现在我们用%运算符来取余。
+
+举例
+
+5 % 2 = 1
+
+
+
+Assignment with Plus Equals
+在编程当中，通常通过赋值来修改变量的内容。请记住，先计算=右边，然后把计算出来的结果赋给左边。
+
+myVar = myVar + 5;
+
+以上是最常见的运算赋值语句，先运算、再赋值。
+
+还有一类操作符是一步到位既做运算也赋值的。
+
+这类操作符的其中一种就是 += 运算符。
+
+myVar += 5; 也是把数值 5 加到变量 myVar上。
+
+
+
+Assignment with Minus Equals
+与 += 操作符类似，-= 操作符用来对一个变量进行减法赋值操作。
+
+myVar = myVar - 5;
+
+将会从变量 myVar 中减去数值 5。也可以写成这种形式：
+
+myVar -= 5;
+
+
+
+Assignment with Times Equals
+*= 操作符是让变量与一个数相乘并赋值。
+
+myVar = myVar * 5;
+
+将会把变量 myVar 与数值 5相乘。也可以写作这样的形式:
+
+myVar *= 5;
+
+
+
+Assignment with Divided by Equals
+/= 操作符是让变量与另一个数相除并赋值。
+
+myVar = myVar / 5;
+
+会把变量 myVar 的值除于 5。等价于:
+
+myVar /= 5;
+
+
+
+Convert Celsius to Fahrenheit
+nothing
+
+
+
+Declare String Variables
+先前我们使用过的代码：
+
+var myName = "your name";
+
+"your name" 被称作 字符串。 字符串是用单或双引号包裹起来的一连串的零个或多个字符。
+
+
+
+Escaping Literal Quotes in Strings
+当你定义一个字符串必须要用单引号或双引号来包裹它。那么当你需要在字符串中使用一个: " 或者 ' 时该怎么办呢?
+
+在 JavaScript 中，你可以通过在引号前面使用 反斜杠 (\) 来转义引号。
+
+var sampleStr = "Alan said, \"Peter is learning JavaScript\".";
+
+这标志着提醒 JavaScript 单引号或双引号并不是字符串的结尾，而是出现在字符串内的字符。所以，如果你要打印字符串到控制台，你将得到：
+
+Alan said, "Peter is learning JavaScript".
+
+
+
+Quoting Strings with Single Quotes
+在 JavaScript 中的 字符串 要用单引号或双引号来包裹它，只要你在开始和结束都使用相同类型的引号，单引号和双引号的功能在JavaScript中是相同的。
+
+"This string has \"double quotes\" in it"
+
+当我们需要在字符串中使用与开头结尾相同的引号时，我们需要对引号进行 转义 。如果你有很多双引号的字符串，使用转义字符可能导致难以阅读。这时候可以使用单引号。
+
+'This string has "double quotes" in it. And "probably" lots of them.'
+
+
+
+Code	Output
+\'	单引号
+\"	双引号
+\\	反斜杠符
+\n	换行符
+\r	回车符
+\t	制表符
+\b	退格符
+\f	换页符
+注意，如果你想要显示一个反斜杠就必须要转义它。
+
+
+
+Concatenating Strings with Plus Operator
+在 JavaScript 中，当 + 操作符与 字符串 一起使用的时候，它被称作 连接 操作符。你可以通过和其他字符串连接 来创建一个新的字符串。
+
+举个例子
+
+'My name is Alan,' + ' I concatenate.'
+注意
+当心空格。连接操作不会添加两个字符串之外的空格，所以想加上空格的话，你需要自己在字符串里面添加。
+
+
+
+Concatenating Strings with the Plus Equals Operator
+我们还可以使用 += 运算符来 连接 字符串到现有字符串的结尾。对于那些非常长的字符串来说，这一操作是非常有用的。
+
+注意
+当心空格。连接操作不会添加两个字符串外面的空格，所以如果想要加上空格的话，你需要自己在字符串里面添加。
+
+
+
+Constructing Strings with Variables
+有时候你需要创建一个填字风格的字符串。
+
+通过使用连接运算符 + ，你可以插入一个或多个变量来组成一个字符串。
+
+
+
+Appending Variables to Strings
+我们不仅可以创建出多行的字符串，还可以使用加等号(+=)运算符来追加变量到字符串上。
+
+
+
+Find the Length of a String
+你可以通过在字符串变量或字符串后面写上 .length 来获得字符串变量 字符串 值的长度。
+
+"Alan Peter".length; // 10
+
+例如，我们创建了一个变量 var firstName = "Charles"，我们就可以通过使用 firstName.length 来获得 "Charles" 字符串的长度。
+
+
+
+Find the Length of a String
+你可以通过在字符串变量或字符串后面写上 .length 来获得字符串变量 字符串 值的长度。
+
+"Alan Peter".length; // 10
+
+例如，我们创建了一个变量 var firstName = "Charles"，我们就可以通过使用 firstName.length 来获得 "Charles" 字符串的长度。
+
+
+
+Use Bracket Notation to Find the First Character in a String
+[]叫中括号，{}叫大括号，()叫小括号。
+
+JavaScript中只有字符串类型，没有字符类型。那么如何获取到字符串中的某个字符呢？
+
+我们通过[索引] 来获得对应的字符。
+
+大多数现代编程语言，如JavaScript，不同于人类从1开始计数。它们是从0开始计数，这被称为 基于零 的索引。
+
+例如, 在单词 "Charles" 中索引0上的字符为 "C"，所以在 var firstName = "Charles" 中，你可以使用 firstName[0] 来获得第一个位置上的字符。
+
+
+
+Understand String Immutability
+理解字符串的不可变性！当你搞懂不可变性后immutable.js对于你就是小菜一碟了。
+
+在 JavaScript 中，字符串 的值是 不可变的，这意味着一旦字符串被创建就不能被改变。
+
+
+
+Use Bracket Notation to Find the Nth Character in a String
+你也可以使用 [索引]来获得一个字符串中的其他位置的字符。
+
+请记住，程序是从 0 开始计数，所以获取第一个字符实际上是[0]。
+
+
+
+Use Bracket Notation to Find the Last Character in a String
+为了得到一个字符串的最后一个字符，你可以用[字符串的长度减去一]。
+
+例如，在 var firstName = "Charles" 中，你可以这样操作 firstName[firstName.length - 1] 来得到字符串的最后的一个字符。
+
+
+
+Use Bracket Notation to Find the NthtoLast Character in a String
+我们既可以获取字符串的最后一个字符，也可以用获取字符串的倒数第N个字符。
+
+例如，你可以这样 firstName[firstName.length - 3] 操作来获得 var firstName = "Charles" 字符串中的倒数第三个字符。
+
+
+
