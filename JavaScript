@@ -326,4 +326,644 @@ Use Bracket Notation to Find the NthtoLast Character in a String
 例如，你可以这样 firstName[firstName.length - 3] 操作来获得 var firstName = "Charles" 字符串中的倒数第三个字符。
 
 
+Store Multiple Values in one Variable using JavaScript Arrays
+使用 数组，我们可以在一个地方存储多个数据。
+
+你以左方括号[开始定义一个数组，以右方括号]结束定义，并把每个条目之间用逗号隔开，就像这样：
+var sandwich = ["peanut butter", "jelly", "bread"]。
+
+
+
+Nest one Array within Another Array
+你也可以在数组中包含其他数组，就像这样: [["Bulls", 23], ["White Sox", 45]]。这被称为一个 多维数组。
+
+
+
+Access Array Data with Indexes
+我们可以像操作字符串一样通过数组索引[index]来访问数组中的数据。
+
+数组索引的使用与字符串索引一样，不同的是，通过字符串的索引得到的是一个字符，通过数组索引得到的是一个
+条目。与字符串类似，数组也是 基于零 的索引，因此数组的第一个元素的索引是 0。
+
+
+Modify Array Data With Indexes
+与字符串的数据不可变不同，数组的数据是可变的，并且可以自由地改变。
+
+
+
+Access MultiDimensional Arrays With Indexes
+可以把 多维 数组看作成是一个 数组中的数组。当使用[]去访问数组的时候，第一个[index]访问的是第N个子数组，第二个[index]访问的是第N个子数组的第N个元素。
+
+
+
+Manipulate Arrays With push
+一个简单的方法将数据追加到一个数组的末尾是通过 push() 函数。
+
+.push() 接受把一个或多个参数，并把它“推”入到数组的末尾。
+
+
+
+Manipulate Arrays With pop
+改变数组中数据的另一种方法是用 .pop() 函数。
+
+.pop() 函数用来“抛出”一个数组末尾的值。我们可以把这个“抛出”的值赋给一个变量存储起来。
+
+数组中任何类型的条目（数值，字符串，甚至是数组）可以被“抛出来” 。
+
+举个例子, 对于这段代码
+var oneDown = [1, 4, 6].pop();
+现在 oneDown 的值为 6 ，数组变成了 [1, 4]。
+
+
+
+Manipulate Arrays With shift
+pop() 函数用来移出数组中最后一个元素。如果想要移出第一个元素要怎么办呢？
+
+这就是 .shift() 的用武之地。它的工作原理就像 .pop()，但它移除的是第一个元素，而不是最后一个。
+
+
+
+Manipulate Arrays With unshift
+你不仅可以 shift（移出）数组中的第一个元素，你也可以 unshift（移入）一个元素到数组的头部。
+
+.unshift() 函数用起来就像 .push() 函数一样, 但不是在数组的末尾添加元素，而是在数组的头部添加元素。
+
+
+
+Shopping List
+nothing
+
+
+
+Write Reusable JavaScript with Functions
+在 JavaScript 中，我们可以把代码的重复部分抽取出来，放到一个函数（functions）中。
+
+这是一个函数（function）的例子：
+
+function functionName() {
+  console.log("Hello World");
+}
+你可以通过函数名称functionName加上后面的小括号来调用这个函数（function），就像这样：
+
+functionName();
+
+每次调用函数时它会打印出消息的“Hello World”到开发的控制台上。所有的大括号之间的代码将在每次函数调用时执行。
+
+
+
+Passing Values to Functions with Arguments
+函数的参数parameters在函数中充当占位符(也叫形参)的作用，参数可以为一个或多个。调用一个函数时所传入的参数
+为实参，实参决定着形参真正的值。简单理解：形参即形式、实参即内容。
+
+这是带有两个参数的函数， param1 和 param2：
+
+function testFun(param1, param2) {
+  console.log(param1, param2);
+}
+接着我们调用 testFun：
+
+testFun("Hello", "World");
+
+我们传递了两个参数， "Hello" 和 "World"。在函数内部，param1 等于“Hello”，param2 等于“World”。请注意，test
+Fun 函数可以多次调用，每次调用时传递的参数会决定形参的实际值。
+
+
+
+
+Global Scope and Functions
+在 JavaScript 中， 作用域 涉及到变量的作用范围。在函数外定义的变量具有 全局 作用域。这意味着，具有全局作用域的变量可以在代码的任何地方被调用。
+
+这些没有使用var关键字定义的变量，会被自动创建在全局作用域中，形成全局变量。当在代码其他地方无意间定义了一个变量，刚好变量名与全局变量相同，这时会产
+生意想不到的后果。因此你应该总是使用var关键字来声明你的变量。
+
+
+
+
+Local Scope and Functions
+在一个函数内声明的变量，以及该函数的参数都是局部变量，意味着它们只在该函数内可见。
+
+
+
+Global vs Local Scope in Functions
+一个程序中有可能具有相同名称的 局部 变量 和 全局 变量。在这种情况下，局部 变量将会优先于 全局 变量。
+
+
+
+Return a Value from a Function with Return
+我们可以把数据通过函数的 参数 来传入函数，也可以使用 return 语句把数据从一个函数中传出来。
+
+
+
+Assignment with a Returned Value
+如果你还记得我们在这一节 Storing Values with the Equal Operator 的讨论，赋值之前，先完成等号右边的操作。这意味着我们可把一个函数的返回值，赋值给一个变量。
+
+假设我们预先定义的函数 sum 其功能就是将两个数字相加，那么：
+
+ourSum = sum(5, 12);
+
+将调用 sum 函数，返回return了一个数值 17，然后把它赋值给了 ourSum 变量。
+
+
+
+Stand in Line
+在计算机科学中 队列（queue）是一个抽象的数据结构，队列中的条目都是有秩序的。新的条目会被加到 队列 的末尾，旧的条目会从 队列 的头部被移出。
+
+
+
+Understanding Boolean Values
+另一种数据类型是布尔（Boolean）。布尔 值要么是true 要么是false。它非常像电路开关， true 是“开”，false 是“关”。这两种状态是互斥的。
+
+注意
+Boolean 值绝不会写作被引号包裹起来的形式。字符串 的 "true" 和 "false" 不是 布尔值，在 JavaScript 中也没有特殊含义。
+
+
+
+Use Conditional Logic with If Statements
+If 语句用于在代码中做条件判断。关键字 if 告诉 JavaScript 在小括号中的条件为真的情况下去执行定义在大括号里面的代码。这种条
+件被称为 Boolean 条件，因为他们只可能是 true（真）或 false（假）。
+
+当条件的计算结果为 true，程序执行大括号内的语句。当布尔条件的计算结果为 false，大括号内的代码将不会执行。
+
+
+
+Comparison with the Equality Operator
+在 JavaScript 中，有很多 相互比较的操作。所有这些操作符都返回一个 true 或 false 值。
+
+最基本的运算符是相等运算符：==。相等运算符比较两个值，如果它们是同等，返回 true，如果它们不等，返回 false。值得注意的是相等运算符
+不同于赋值运算符（=），赋值运算符是把等号右边的值赋给左边的变量。
+
+
+
+Comparison with the Strict Equality Operator
+严格相等运算符（===）是相对于相等操作符（==）的一种操作符。与相等操作符不同的是，它会同时比较元素的值和 数据类型。
+
+
+
+Comparison with the Inequality Operator
+不相等运算符（!=）与相等运算符是相反的。这意味着不相等运算符中，如果“不为真”并且返回 false 的地方，在相等运算符中
+会返回true，反之亦然。与相等运算符类似，不相等运算符在比较的时候也会转换值的数据类型。
+
+
+
+Comparison with the Strict Inequality Operator
+严格不相等运算符（!==）与全等运算符是相反的。这意味着严格不相等并返回 false 的地方，用严格相等运算符会返回 true，反之亦
+然。严格相等运算符不会转换值的数据类型。
+
+
+
+Comparison with the Greater Than Operator
+使用大于运算符（>）来比较两个数字。如果大于运算符左边的数字大于右边的数字，将会返回 true。否则，它返回 false。
+
+与相等运算符一样，大于运算符在比较的时候，会转换值的数据类型。
+
+
+
+Comparison with the Greater Than Or Equal To Operator
+使用 大于等于 运算符（>=）来比较两个数字的大小。如果大于等于运算符左边的数字比右边的数字大或者相等，它会返回 true。否则，它会返回 false。
+
+与相等运算符相似，大于等于 运算符在比较的时候会转换值的数据类型。
+
+
+
+Comparison with the Less Than Operator
+使用 小于 运算符（<）比较两个数字的大小。如果小于运算符左边的数字比右边的数字小，它会返回 true。否则，他会返回 false。与相等运
+算符类似，小于 运算符在做比较的时候会转换值的数据类型。
+
+
+
+Comparison with the Less Than Or Equal To Operator
+使用 小于等于 运算符（<=）比较两个数字的大小。如果在小于等于运算符，左边的数字小于或者等于右边的数字，它会返回 true。如果在小于等于
+运算符，左边的数字大于或者等于右边的数字，它会返回 false。与相等运算符类型，小于等于 运算符会转换数据类型。
+
+
+
+Comparisons with the Logical And Operator
+有时你需要在一次判断中做多个操作。当且仅当运算符的左边和右边都是 true，逻辑与 运算符（&&）才会返回 true。
+
+
+
+Comparisons with the Logical Or Operator
+如果任何一个操作数是true，逻辑或 运算符 (||) 返回 true。反之，返回 false。
+
+
+
+Introducing Else Statements
+当if语句的条件为真，大括号里的代码执行，那如果条件为假呢？
+
+正常情况下什么也不会发生。
+
+
+
+Introducing Else If Statements
+如果你有多个条件语句，你可以通过else if语句把 if语句链起来。
+
+
+
+
+Logical Order in If Else Statements
+if、else if语句中代码的执行顺序是很重要的。
+
+在条件判断语句中，代码的执行顺序是从上到下，所以你需要考虑清楚先执行哪一句，后执行哪一句。
+
+
+
+Chaining If Else Statements
+if/else 语句串联在一起可以实现复杂的逻辑，这是多个if/else if 语句串联在一起的伪代码：
+
+if (condition1) {
+  statement1
+} else if (condition2) {
+  statement2
+} else if (condition3) {
+  statement3
+. . .
+} else {
+  statementN
+}
+
+
+
+
+Selecting from many options with Switch Statements
+如果你有非常多的选项需要选择，可以使用switch语句。根据不同的参数值会匹配上不同的case分支，语句会从第一个匹配
+的case分支开始执行，直到碰到break就结束。
+
+
+
+Adding a default option in Switch statements
+在switch 语句中你可能无法用case来指定所有情况，这时你可以添加default语句。当再也找不到case匹配的时候default
+语句会执行，非常类似于if/else组合中的else语句。
+
+
+
+Multiple Identical Options in Switch Statements
+如果switch语句中的case分支的break 语句漏掉了，后面的 case语句会一直执行直到遇到break。
+
+
+
+Replacing If Else Chains with Switch
+如果你有多个选项需要选择，switch 语句写起来会比多个串联的if/if else语句容易些
+
+
+
+Returning Boolean Values from Functions
+你可能会回想起Comparison with the Equality Operator ，所有的比较操作符返回的都是一个boolean值，要么是 true 要么是false 。
+
+
+
+Return Early Pattern for Functions
+当代码执行到return语句时，函数返回一个结果就结束运行了，return后面的语句根本不会执行。
+
+
+
+Counting Cards
+nothing
+
+
+
+Build JavaScript Objects
+你之前可能听说过对象 object 。
+
+对象和数组很相似，数组是通过索引来访问和修改数据，对象是通过属性来访问和修改数据的。
+
+
+
+
+Accessing Objects Properties with the Dot Operator
+有两种方式访问对象属性，一个是点操作符(.)，一个是中括号操作符([])。
+
+当你知道属性的名称的时候，使用点操作符。
+
+
+
+Accessing Objects Properties with Bracket Notation
+第二种访问对象的方式就是中括号操作符([])，如果你想访问的属性的名称有一个空格，这时你只能使用中括号操作符([])。
+
+
+
+
+Accessing Objects Properties with Variables
+中括号操作符的另一个使用方式是用变量来访问一个属性。当你需要遍历对象的属性列表或查表时，这种方式极为有用。
+
+这有一个使用变量来访问属性的例子：
+
+var someProp = "propName";
+var myObj = {
+  propName: "Some Value"
+}
+myObj[someProp]; // "Some Value"
+还有更多：
+
+var myDog = "Hunter";
+var dogs = {
+  Fido: "Mutt",
+  Hunter: "Doberman",
+  Snoopie: "Beagle"
+}
+var breed = dogs[myDog]; 
+console.log(breed)// "Doberman"
+提示：当我们通过变量名访问属性的时候，不需要给变量名包裹引号。因为实际上我们使用的是变量的值，而不是变量的名称。
+
+
+
+
+Updating Object Properties
+当你创建了一个对象后，你可以用点操作符或中括号操作符来更新对象的属性。
+
+举个例子，让我们看看 ourDog:
+
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+让我们更改它的名称为 "Happy Camper"，这有两种方式来更新对象的name属性：
+
+ourDog.name = "Happy Camper";
+
+ourDog["name"] = "Happy Camper";
+
+
+
+Add New Properties to a JavaScript Object
+你也可以像更改属性一样给对象添加属性。
+
+
+
+Delete Properties from a JavaScript Object
+我们同样可以删除对象的属性，例如：
+
+delete ourDog.bark;
+
+
+
+Using Objects for Lookups
+对象和字典一样，可以用来存储键/值对。如果你的数据跟
+对象一样，你可以用对象来查找你想要的值，而不是使用s
+witch或if/else语句。当你知道你的输入数据在某个范围时，这种查找方式极为有效。
+
+
+
+Testing Objects for Properties
+有时检查一个对象属性是否存在是非常有用的，我们可以用.hasOwnProperty(propname)方法来检查对象是否有该属性。如果有返回true，反之返回 false。
+
+
+
+Introducing JavaScript Object Notation JSON
+JavaScript Object Notation 简称 JSON，它使用JavaScript对象的格式来存储数据。JSON是灵活的，因为它允许 数据结构 是 字符串，数字，布尔值，字符串，和 对象 的任意组合。
+
+这里是一个JSON对象的示例：
+
+var ourMusic = [
+  {
+    "artist": "Daft Punk",
+    "title": "Homework",
+    "release_year": 1997,
+    "formats": [ 
+      "CD", 
+      "Cassette", 
+      "LP" ],
+    "gold": true
+  }
+];
+这是一个对象数组，并且对象有各种关于专辑的 详细信息。它也有一个嵌套的 formats 的数组。附加专辑记录可以被添加到数组的最上层。
+
+提示
+数组中有多个 JSON 对象的时候，对象与对象之间要用逗号隔开。
+
+
+
+Accessing Nested Objects in JSON
+通过串联起来的点操作符或中括号操作符来访问JSON对象的嵌套属性。
+下面是一个嵌套的JSON对象：
+
+var ourStorage = {
+  "desk": {
+    "drawer": "stapler"
+  },
+  "cabinet": {
+    "top drawer": { 
+      "folder1": "a file",
+      "folder2": "secrets"
+    },
+    "bottom drawer": "soda"
+  }
+}
+ourStorage.cabinet["top drawer"].folder2;  // "secrets"
+ourStorage.desk.drawer; // "stapler"
+
+
+
+Accessing Nested Arrays in JSON
+正如我们在前面的例子所见，JSON对象可以嵌套对象和数组。与访问嵌套对象一样，用中括号操作符同样可以访问嵌套数组。
+
+下面是如何访问嵌套数组的例子：
+
+var ourPets = { 
+  "cats": [
+    "Meowzer",
+    "Fluffy",
+    "Kit-Cat"
+  ],
+  "dogs": [
+    "Spot",
+    "Bowser",
+    "Frankie"
+  ]
+};
+ourPets.cats[1]; // "Fluffy"
+ourPets.dogs[0]; // "Spot"
+
+
+
+Record Collection
+nothing
+
+
+
+Iterate with JavaScript For Loops
+一个条件语句只能执行一次代码，而一个循环语句可以多次执行代码。
+
+JavaScript 中最常见的循环就是“for循环”。
+
+for循环中的三个表达式用分号隔开：
+
+for ([初始化]; [条件判断]; [计数器])
+
+初始化语句只会在执行循环开始之前执行一次。它通常用于定义和设置你的循环变量。
+
+条件判断语句会在每一轮循环的开始执行，只要条件判断为 true 就会继续执行循环。当条件为 false的时候，循环将停止执行。这意味着，如果条件在一开始就为 false，这个循环将不会执行。
+
+计数器是在每一轮循环结束时执行，通常用于递增或递减。
+
+
+
+Iterate Odd Numbers With a For Loop
+for循环可以按照我们指定的顺序来迭代，通过更改我们的 计数器，我们可以按照偶数顺序来迭代。
+
+初始化 i = 0，当 i < 10 的时候继续循环。
+
+i += 2 让 i 每次循环之后增加2。
+
+var ourArray = [];
+for (var i = 0; i < 10; i += 2) {
+  ourArray.push(i);
+}
+循环结束后，ourArray 的值为 [0,2,4,6,8]。
+
+改变 计数器，这样我们可以用奇数来数。
+
+
+
+Count Backwards With a For Loop
+for循环也可以逆向迭代，只要我们定义好合适的条件。
+
+为了能够从后往前两两倒数，我们需要改变我们的 初始化，条件判断 和 计数器。
+
+
+
+Iterate Through an Array with a For Loop
+迭代输出一个数组的每个元素是 JavaScript 中的常见需求， for 循环可以做到这一点。
+
+
+
+Nesting For Loops
+如果你有一个二维数组，可以使用相同的逻辑，先遍历外面的数组，再遍历里面的子数组。下面是一个例子：
+
+var arr = [
+  [1,2], [3,4], [5,6]
+];
+for (var i=0; i < arr.length; i++) {
+  for (var j=0; j < arr[i].length; j++) {
+    console.log(arr[i][j]);
+  }
+}
+
+
+
+Iterate with JavaScript While Loops
+另一种类型的 JavaScript 循环被称为while循环，因为它规定，当（while）条件为真，循环才会执行，反之不执行。
+
+var ourArray = [];
+var i = 0;
+while(i < 5) {
+  ourArray.push(i);
+  i++;
+}
+
+
+
+Profile Lookup
+nothing
+
+
+
+Generate Random Fractions with JavaScript
+计算机的行为只有两种：确定性和随机性。当你一步步地闯关来到这里就是确定行为，当你随意点了个链接就来到这里就是随机行为。
+
+而随机数最适合用来创建这种随机行为。
+
+Math.random()用来生成一个在0(包括0)到1(不包括1)之间的随机小数，因此Math.random()可能返回0但绝不会返回1。
+
+
+
+Generate Random Whole Numbers with JavaScript
+生成随机小数很棒，但随机数更有用的地方在于生成随机整数。
+
+用 Math.random() 生成一个随机小数。
+把这个随机小数乘以 20。
+用 Math.floor() 向下取整 获得它最近的整数。
+记住 Math.random() 永远不会返回 1。同时因为我们是在用 Math.floor() 向下取整，所以最终我们获得的结果不可能有 20。这确保了我们获得了一个在0到19之间的整数。
+
+把操作连缀起来，代码类似于下面：
+
+Math.floor(Math.random() * 20);
+
+
+
+Generate Random Whole Numbers within a Range
+我们之前生成的随机数是在0到某个数之间，现在我们要生成的随机数是在两个指定的数之间。
+
+我们需要定义一个最小值和一个最大值。
+
+下面是我们将要使用的方法，仔细看看并尝试理解这行代码到底在干嘛：
+
+Math.floor(Math.random() * (max - min + 1)) + min
+
+
+
+
+Sift through Text with Regular Expressions
+Regular expressions 正则表达式被用来根据某种匹配模式来寻找strings中的某些单词。
+
+举例：如果我们想要找到字符串The dog chased the cat中单词 the，我们可以使用下面的正则表达式: /the/gi
+
+我们可以把这个正则表达式分成几段：
+
+/ 是这个正则表达式的头部
+
+the 是我们想要匹配的模式
+
+/ 是这个正则表达式的尾部
+
+g 代表着 global(全局)，意味着返回所有的匹配而不仅仅是第一个。
+
+i 代表着忽略大小写，意思是当我们寻找匹配的字符串的时候忽略掉字母的大小写。
+
+
+
+
+Find Numbers with Regular Expressions
+我们可以在正则表达式中使用特殊选择器来选取特殊类型的值。
+
+特殊选择器中的一种就是数字选择器\d，意思是被用来获取一个字符串的数字。
+
+在JavaScript中, 数字选择器类似于: /\d/g。
+
+在选择器后面添加一个加号标记(+)，例如：/\d+/g，它允许这个正则表达式匹配一个或更多数字。
+
+尾部的g是'global'的简写，意思是允许这个正则表达式 找到所有的匹配而不是仅仅找到第一个匹配。
+
+
+
+
+Find Whitespace with Regular Expressions
+我们也可以使用正则表达式选择器 \s 来选择一个字符串中的空白。
+
+空白字符有 " " (空格符)、\r (回车符)、\n (换行符)、\t (制表符) 和 \f (换页符)。
+
+空白正则表达式类似于：
+
+/\s+/g
+
+
+
+Invert Regular Expression Matches with JavaScript
+你可以用正则表达式选择器的大写版本 来转化任何匹配。
+
+举个例子：\s 匹配任何空白字符，\S 匹配任何非空白字符。
+
+
+
+Create a JavaScript Slot Machine
+nothing
+
+
+
+Add your JavaScript Slot Machine Slots
+nothing
+
+
+
+Bring your JavaScript Slot Machine to Life
+nothing
+
+
+
+Give your JavaScript Slot Machine some Stylish Images
+nothing
+
+
+
 
