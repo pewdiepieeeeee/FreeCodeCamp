@@ -1,0 +1,88 @@
+Trigger Click Events with jQuery
+通过jQuery来绑定点击事件。
+
+首先，我们来看一下函数 $(document).ready() 干了些什么。
+
+这个函数中的代码只会在我们的页面加载时候运行一次，确保执行js之前页面所有的dom已经准备就绪。
+
+
+
+Change Text with Click Events
+通过点击事件来更改文本。
+
+当我们点击按钮时，我们可以更新HTML页面
+
+
+
+Get JSON with the jQuery getJSON Method
+当你需要根据服务器返回的数据来动态改变页面的时候，应用程序接口(API)就派上用场了。
+
+记住，API——应用程序接口(Application Programming Interface)是计算机之间相互交流沟通的工具。
+
+许多网站的应用程序接口(API)都是通过一种称为JSON格式的数据来传输的，JSON 是 JavaScript Object Notation的简写。
+
+其实如果你曾经创建过JS对象的话，你就已经使用了这种数据格式，JSON是一种非常简洁的数据格式。
+
+它通常表现为了两种形式，一种为单个对象，一种为多个对象
+
+单个对象类似于：
+{name:'盖伦',advantage:'单挑无敌'}
+
+多个对象类似于：
+[{name:'盖伦',advantage:'单挑无敌'},{name:'诺克',advantage:'上单霸主'}]
+
+每个对象属性和属性值的组合就是我们经常听到的"键值对(key-value pairs)"。
+
+
+
+Convert JSON Data to HTML
+好了，我们已经从JSON API中获得了数据，现在把它们展现到我们的HTML页面中吧。
+
+这里，我们使用.forEach()函数来循环遍历JSON数据写到htmll变量中。
+
+首先我们定义一个HTML变量，
+var html = ""; 。
+
+然后，我们使用.forEach()函数来循环遍历JSON数据写到html变量中，最后把html变量显示到我们的页面中。
+
+整个过程的代码如下：
+
+json.forEach(function(val) {
+  var keys = Object.keys(val);
+  html += "<div class = 'cat'>";
+  keys.forEach(function(key) {
+    html += "<b>" + key + "</b>: " + val[key] + "<br>";
+  });
+  html += "</div><br>";
+});
+
+
+
+Render Images from Data Sources
+从上节课获得的JSON数组中，每个对象都包含了一个以imageLink为键(key)，以猫的图片的url为值(value)的键值对。
+
+
+
+
+Prefilter JSON
+如果我们不想把所有从JSON API中得到的图片都展现出来，我们可以在遍历之前做一次过滤。
+
+我们把其中 "id" 键的值为1的图片过滤掉。
+
+代码如下:
+
+json = json.filter(function(val) {
+  return (val.id !== 1);
+});
+
+
+
+Get Geolocation Data
+我们还可以通过浏览器navigator获得我们当前所在的位置geolocation。
+
+位置的信息包括经度longitude和纬度latitude。
+
+你将会看到一个是否允许获取当前位置的提示。不管你选择允许或者禁止，只要代码正确，这关就能过了。
+
+
+
