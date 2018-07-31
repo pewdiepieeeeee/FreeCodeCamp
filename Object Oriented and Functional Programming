@@ -1,0 +1,159 @@
+Declare JavaScript Objects as Variables
+nothing
+
+
+
+Construct JavaScript Objects with Functions
+除了上一种方法外，我们还可以使用构造函数来创建对象。
+
+ 构造函数 通常使用大写字母开头，以便把自己和其他普通函数区别开。
+
+下面便是一个 构造函数 了：
+
+var Car = function() {
+  this.wheels = 4;
+  this.engines = 1;
+  this.seats = 1;
+};
+在 构造函数 中， this 指向被此 构造函数 创建出来的 对象 。所以，当我们在 构造函数 中写：
+
+  this.wheels = 4;
+
+这时，它创建出来的新对象将带有 wheels 属性，并且赋值为 4.
+
+你可以认为 构造函数 描述了它所创建出来的对象。
+
+
+
+Make Instances of Objects with a Constructor Function
+现在，我们把上一节课我们写的 构造函数 在这里用起来！
+
+使用构造函数时，我们通过在它前面使用 new 关键字 来对它进行调用，如下：
+
+var myCar = new Car();
+
+
+
+Make Unique Objects by Passing Parameters to our Constructor
+我们之前写的 构造函数 很好，但是我们不想总是创建相同的对象，怎么办呢？
+
+为了解决这个问题，我们要向 构造函数 中添加 参数 。像下面这样：
+
+var Car = function(wheels, seats, engines) {
+  this.wheels = wheels;
+  this.seats = seats;
+  this.engines = engines;
+};
+现在，我们可以在调用 构造函数 时传入一组 参数 了。
+
+
+
+
+Make Object Properties Private
+对象拥有自己的特征，称为 属性，对象还有自己的函数，称为 方法 。
+
+在前面的课程（构造函数）中，我们使用了 this 指向当前（将要被创建的）对象中的 公有属性 。
+
+我们也可以创建 私有属性 和 私有方法 ，它们两个在对象外部是不可访问的。
+
+为了完成这个任务，我们在 构造函数 中，使用我们熟悉的 var 关键字去创建变量，来替代我们使用 this 创建 属性 。
+
+
+
+
+Iterate over Arrays with map
+Iterate over Arrays with map
+ map 方法可以方便的迭代数组，例子：
+
+var timesFour = oldArray.map(function(val){
+  return val * 4;
+});
+ map 方法会迭代数组中的每一个元素，并根据回调函数来处理每一个元素，最后返回一个新数组。注意，这个方法不会改变原始数组。
+ 
+ 
+ 
+ Condense arrays with reduce
+ Condense arrays with reduce
+数组方法 reduce 用来迭代一个数组，并且把它累积到一个值中。
+
+使用 reduce 方法时，你要传入一个回调函数，这个回调函数的参数是一个 累加器 （比如例子中的 previousVal) 和当前值 (currentVal）。
+
+reduce 方法有一个可选的第二参数，它可以被用来设置累加器的初始值。如果没有在这定义初始值，那么初始值将变成数组中的第一项，而 currentVal 将从数组的第二项开始。
+
+
+
+
+Filter Arrays with filter
+ filter 方法用来迭代一个数组，并且按给出的条件过滤出符合的元素。
+
+filter 方法传入一个回调函数，这个回调函数会携带一个参数，参数为当前迭代的项（我们叫它 val ）。
+
+回调函数返回 true 的项会保留在数组中，返回 false 的项会被过滤出数组。
+
+
+
+Sort Arrays with sort
+使用 sort 方法，你可以很容易的按字母顺序或数字顺序对数组中的元素进行排序。
+
+与我们之前用的数组方法仅仅返回一个新数组不同， sort 方法将改变原数组，返回被排序后的数组。
+
+sort 可以把比较函数作为参数传入。比较函数有返回值，当 a 小于 b，返回一个负数；当 a 大于 b ，返回一个正数；相等时返回0。
+
+如果没有传入比较函数，它将把值全部转成字符串，并按照字母顺序进行排序。
+
+下面的例子将展示 sort 的使用，传入的比较函数把元素按照从小到大的顺序进行排列：
+
+var array = [1, 12, 21, 2];
+array.sort(function(a, b) {
+  return a - b;
+});
+使用 sort 按照从大到小的顺序排序 array 。
+
+
+
+
+Reverse Arrays with reverse
+你可以使用 reverse 方法来翻转数组。
+
+var myArray = [1, 2, 3];
+myArray.reverse();
+结果myArray 变成了 [3, 2, 1]
+
+
+
+Concatenate Arrays with concat
+concat 方法可以用来把两个数组的内容合并到一个数组中。
+
+concat 方法的参数应该是一个数组。参数中的数组会拼接在原数组的后面，并作为一个新数组返回。
+
+下面是一个拼接数组的例子，用concat 把 otherArray 拼接在 oldArray 的后面：
+
+newArray = oldArray.concat(otherArray);
+
+使用 .concat() 将 concatMe 拼接到 oldArray 后面，并且赋值给 newArray。
+
+
+
+Split Strings with split
+你可以使用 split 方法按指定分隔符将字符串分割为数组。
+
+你要给 split 方法传递一个参数，这个参数将会作为一个分隔符。
+下面的例子展示了 split 方法的使用，按照 s 字母进行分割：
+
+var array = string.split('s');
+
+
+
+Join Strings with join
+我们还可以使用 join 方法来把数组转换成字符串，里面的每一个元素可以用你指定的连接符来连接起来，这个连接符就是你要传入的参数。
+
+下面展示了使用 join 来将数组中的每一项放入字符串，并用 and 进行连接：
+
+var veggies = ["Celery", "Radish", "Carrot", "Potato"];
+var salad = veggies.join(" and ");
+console.log(salad); // "Celery and Radish and Carrot and Potato
+
+
+
+
+
